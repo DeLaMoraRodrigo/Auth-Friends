@@ -1,5 +1,4 @@
 import React from "react";
-import axios from "axios";
 
 import { axiosWithAuth } from "../utils/axiosWithAuth";
 
@@ -21,26 +20,26 @@ class DeleteFriend extends React.Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        // axiosWithAuth()
-        //     .delete(`/api/friends/${this.state.friend.id}`)
-        //     .this(res => {
-        //         console.log({ res })
-        //         this.setState({
-        //             friend: {
-        //                 id: ""
-        //             }
-        //         })
-        //     })
-        //     .catch(err => {
-        //         console.log({ err })
-        //     })
-        axiosWithAuth()({method: 'delete', url: `http://localhost:5000/api/friends/${this.state.friend.id}`})
+        axiosWithAuth()
+            .delete(`/api/friends/${this.state.friend.id}`)
             .then(res => {
                 console.log({ res })
+                this.setState({
+                    friend: {
+                        id: ""
+                    }
+                })
             })
             .catch(err => {
                 console.log({ err })
             })
+        // axiosWithAuth()({method: 'delete', url: `http://localhost:5000/api/friends/${this.state.friend.id}`})
+        //     .then(res => {
+        //         console.log({ res })
+        //     })
+        //     .catch(err => {
+        //         console.log({ err })
+        //     })
     }
 
     render() {

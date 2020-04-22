@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.cardContainer {
+  border: 3px solid black;
+}

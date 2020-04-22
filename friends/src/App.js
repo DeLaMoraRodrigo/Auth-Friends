@@ -5,6 +5,7 @@ import Login from "./components/Login";
 import FriendsList from "./components/FriendsList";
 import AddFriend from "./components/AddFriend";
 import DeleteFriend from "./components/DeleteFriend";
+import UpdateFriend from "./components/UpdateFriend";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 import './App.css';
@@ -29,6 +30,9 @@ function App() {
           <NavLink to="/delete-friends">
             <h3>Delete Friends</h3>
           </NavLink>
+          <NavLink to="/update-friends">
+            <h3>Update Friends</h3>
+          </NavLink>
         </nav>
 
         <Switch>
@@ -36,6 +40,7 @@ function App() {
           <ProtectedRoute exact path="/friends" component={FriendsList}/>
           <ProtectedRoute exact path="/add-friends" component={AddFriend}/>
           <ProtectedRoute exact path="/delete-friends" component={DeleteFriend}/>
+          <ProtectedRoute exact path="/update-friends" component={UpdateFriend}/>
         </Switch>
       </Router>
     </div>

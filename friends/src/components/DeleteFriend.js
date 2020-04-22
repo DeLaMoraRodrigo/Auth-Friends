@@ -24,6 +24,7 @@ class DeleteFriend extends React.Component {
             .delete(`/api/friends/${this.state.friend.id}`)
             .then(res => {
                 console.log({ res })
+                alert(`You have deleted your friend with the id of ${this.state.friend.id}`)
                 this.setState({
                     friend: {
                         id: ""

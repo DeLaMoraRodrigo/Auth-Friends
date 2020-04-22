@@ -7,7 +7,9 @@ class UpdateFriend extends React.Component {
         friend: {
             name: "",
             age: "",
-            email: "",
+            email: ""
+        },
+        friendId: {
             id: ""
         }
     }
@@ -15,7 +17,17 @@ class UpdateFriend extends React.Component {
     handleChange = e => {
         e.preventDefault();
         this.setState({
+            ...this.state,
             friend: {...this.state.friend,
+            [e.target.name]: e.target.value
+        }})
+    }
+
+    handleIdChange = e => {
+        e.preventDefault();
+        this.setState({
+            ...this.state,
+            friendId: {...this.state.friendId,
             [e.target.name]: e.target.value
         }})
     }
@@ -23,9 +35,10 @@ class UpdateFriend extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         axiosWithAuth()
-            .put(`/api/friends/${this.state.friend.id}`, this.state.friend)
+            .put(`/api/friends/${this.state.friendId.id}`, this.state.friend)
             .then(res => {
                 console.log({ res })
+                alert(`You have updated your friend with the id of ${this.state.friend.id}`)
             })
             .catch(err => {
                 console.log({ err })
@@ -62,8 +75,8 @@ class UpdateFriend extends React.Component {
                         name="id"
                         placeholder="ID"
                         type="text"
-                        value={this.state.friend.id}
-                        onChange={this.handleChange}
+                        value={this.state.friendId.id}
+                        onChange={this.handleIdChange}
                     />
                     <button>Update Friend</button>
                 </form>

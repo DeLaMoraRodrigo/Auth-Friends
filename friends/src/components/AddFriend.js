@@ -27,6 +27,7 @@ class AddFriend extends React.Component {
             .post(`/api/friends`, this.state.friend)
             .then(res => {
                 console.log({ res })
+                alert(`You have added ${this.state.friend.name}`)
                 this.setState({
                     friend: {
                         name: "",

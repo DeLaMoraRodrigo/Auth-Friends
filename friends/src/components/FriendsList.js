@@ -40,12 +40,12 @@ class FriendsList extends React.Component {
             <div>
                 <h2>Friends List</h2>
                 {this.state.isLoading && <p>Loading...</p>}
-                <div>
+                <div className="friendsContainer">
                     {this.state.friends && this.state.friends.map(friend => (
                         <div key={friend.id} className="cardContainer">
                             <h3>{friend.name}</h3>
-                            <h3>{friend.age}</h3>
-                            <h3>{friend.email}</h3>
+                            <h3>Age: {friend.age}</h3>
+                            <h3>Email: {friend.email}</h3>
                             <h4>{friend.id}</h4>
                         </div>
                     ))}

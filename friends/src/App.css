@@ -37,6 +37,24 @@
   }
 }
 
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  border-bottom: 3px solid black;
+}
+
+h2 {
+  font-size: 4rem;
+}
+
+.friendsContainer {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .cardContainer {
   border: 3px solid black;
+  width: 30%;
+  margin: 3%;
 }

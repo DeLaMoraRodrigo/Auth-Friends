@@ -38,7 +38,7 @@ class UpdateFriend extends React.Component {
             .put(`/api/friends/${this.state.friendId.id}`, this.state.friend)
             .then(res => {
                 console.log({ res })
-                alert(`You have updated your friend with the id of ${this.state.friend.id}`)
+                alert(`You have updated your friend with the id of ${this.state.friendId.id}`)
             })
             .catch(err => {
                 console.log({ err })
